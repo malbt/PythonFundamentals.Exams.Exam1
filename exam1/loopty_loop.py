@@ -1,4 +1,5 @@
 from typing import Callable, List
+import random
 
 
 def generate_list(start: int, stop: int, step: int = 1) -> List[int]:
@@ -10,7 +11,14 @@ def generate_list(start: int, stop: int, step: int = 1) -> List[int]:
     :param step: How many digits apart each number is from the others around it.
     :return: A list of integers.
     """
-    pass  # implement me
+
+    my_list = []
+    for i in range(start, stop):
+        i = (int(random.uniform(step)))
+        my_list.append(i)
+        return my_list
+
+
 
 
 def generate_list_with_strategy(start: int, stop: int, step: int, strategy: Callable) -> List[int]:
