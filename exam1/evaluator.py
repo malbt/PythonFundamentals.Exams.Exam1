@@ -107,7 +107,7 @@ def find_duplicates(tuple_in: Tuple) -> List:
     """
     tuple_one = []
     duplicate = []
-    tuple_one = []
+    
     for value in tuple_in:
         if value not in tuple_one:
             tuple_one.append(value)
