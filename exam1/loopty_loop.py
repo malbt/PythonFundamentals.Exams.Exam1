@@ -29,4 +29,5 @@ def generate_list_with_strategy(start: int, stop: int, step: int, strategy: Call
     :param strategy: A function to manipulate each digit .
     :return: A list of integers.
     """
-    pass  # implement me
+    st_list = [strategy(x) for x in range(start, stop, step)]
+    return st_list

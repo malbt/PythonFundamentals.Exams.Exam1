@@ -1,3 +1,4 @@
+from os import remove
 from typing import List, Tuple, Set, TypeVar
 
 N = TypeVar('N', int, float)
@@ -22,7 +23,7 @@ def find_highest_value(list_in: List[N]) -> N:
     :param list_in: A list of numbers (integers and/or floats)
     :return: The highest number in the list
     """
-    highest_val = max (list_in)
+    highest_val = max(list_in)
     return highest_val
 
 
@@ -36,8 +37,10 @@ def find_value(value_to_find, values: C) -> int:
     :param values: A List or a Set.
     :return: an integer. Either the index where the value exists or -1
     """
-    for item in value_to_find:
-        print(item)
+    if value_to_find in values:
+        return values.index(value_to_find)
+    else:
+        return -1
 
 
 def compare_two_numbers(a: N, b: N) -> int:
@@ -52,7 +55,15 @@ def compare_two_numbers(a: N, b: N) -> int:
     :param b: The second number.
     :return: an integer 0, 1, or -1
     """
-    pass  # implement me
+    if a == b:
+        c = 0
+        return c
+    elif a > b:
+        c = 1
+        return c
+    elif a < b:
+        c = -1
+        return c
 
 
 def compare_two_strings(a: str, b: str) -> int:
@@ -67,10 +78,12 @@ def compare_two_strings(a: str, b: str) -> int:
     :param b: The second string.
     :return: an integer 0, 1, or -1
     """
-    c = a .diference(b)
-    return (c)
-
-
+    if len(a) == len(b):
+        return 0
+    elif len(a) > len(b):
+        return 1
+    elif len(b) > len(a):
+        return -1
 
 
 def find_common(tuple_a: Tuple, tuple_b: Tuple) -> Set:
@@ -81,7 +94,9 @@ def find_common(tuple_a: Tuple, tuple_b: Tuple) -> Set:
     :param tuple_b: The second tuple.
     :return: A set containing items common on both tuples.
     """
-    c = a.intersection(b)
+    common_item = set(tuple_a).intersection(set(tuple_b))
+    return common_item
+
 
 def find_duplicates(tuple_in: Tuple) -> List:
     """
@@ -90,5 +105,11 @@ def find_duplicates(tuple_in: Tuple) -> List:
     :param tuple_in: A tuple
     :return: a A list containing duplicate items in the tuple_in parameter
     """
-    pass
+    tuple_one = []
+    duplicate = []
+    for value in tuple_in:
+
+
+
+
 
